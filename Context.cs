@@ -25,6 +25,10 @@ using (OrderContext db = new OrderContext())
     //read
 
     List<Customer> customers = db.Customers.OrderBy(customers => customers.Name).ToList();
+
+    //remuve
+    db.Remove(customers[1]);
+    db.SaveChanges();
 }
 
 
