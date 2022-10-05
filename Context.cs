@@ -29,7 +29,13 @@ using (OrderContext db = new OrderContext())
     //remuve
     db.Remove(customers[1]);
     db.SaveChanges();
+
+    foreach (Customer customer in customers)
+    {
+        Console.WriteLine(customer.Name + " " + customer.Surname + " ------> " + customer.Email);
+    }
 }
+
 
 
 public class OrderContext : DbContext
